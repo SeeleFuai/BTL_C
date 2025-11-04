@@ -35,10 +35,40 @@ int main() {
 
         switch (choice) {
             case 1: init_list(&head); break;
-            case 2: check_and_delete(&head); break;
-            case 3: printf("Tích = %d\n", product_filtered(head)); break;
-            case 4: sort_list(head); break;
-            case 5: remove_duplicates(&head); break;
+            case 2: 
+            {
+                printf("Danh sách hiện tại:\n");
+                print_list(head);
+                check_and_delete(&head);
+                printf("Danh sách sau khi kiểm tra và xóa:\n");
+                print_list(head); 
+                break;
+            }
+            case 3: 
+            {
+                printf("Danh sách hiện tại:\n");
+                print_list(head);
+                printf("Tích = %d\n", product_filtered(head)); 
+                break;
+            }
+            case 4: 
+            {
+                printf("Danh sách hiện tại:\n");
+                print_list(head);
+                sort_list(head); 
+                printf("Danh sách sau khi sắp xếp:\n");
+                print_list(head);
+                break;
+            }
+            case 5: 
+            {
+                printf("Danh sách hiện tại:\n");
+                print_list(head);
+                remove_duplicates(&head); 
+                printf("Danh sách sau khi xóa phần tử trùng nhau:\n");
+                print_list(head);
+                break;
+            }
             case 6: print_list(head); break;
             case 7: display_fibonacci(head); break;
         }
