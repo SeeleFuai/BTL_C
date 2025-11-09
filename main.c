@@ -19,7 +19,8 @@
 int main() {
     DLL* list  = create_List();
     int choice;
-    int choice_2;
+    int choice_sort;
+    int choice_print;
     do {
         printf("\nMenu:\n");
         printf("1. Khởi tạo danh sách\n");
@@ -66,24 +67,26 @@ int main() {
                     printf("2.Sắp xếp theo Node\n");
                     printf("0.Quay lại\n");
                     printf("Chọn: ");
-                    scanf("%d", &choice_2);
-                    switch (choice_2)
+                    scanf("%d", &choice_sort);
+
+                    switch (choice_sort)
                     {
-                    case 1:
-                        printf("Danh sách hiện tại:\n");
-                        print_list(list);
-                        sort_list(list); 
-                        printf("Danh sách sau khi sắp xếp:\n");
-                        print_list(list);
-                        break;
-                    case 2:
-                        printf("Danh sách hiện tại:\n");
-                        print_list(list);
-                        sort_list_(list); 
-                        printf("Danh sách sau khi sắp xếp:\n");
-                        print_list(list);
+                        case 1:
+                            printf("Danh sách hiện tại:\n");
+                            print_list(list);
+                            sort_list(list); 
+                            printf("Danh sách sau khi sắp xếp:\n");
+                            print_list(list);
+                            break;
+                        case 2:
+                            printf("Danh sách hiện tại:\n");
+                            print_list(list);
+                            sort_list_(list); 
+                            printf("Danh sách sau khi sắp xếp:\n");
+                            print_list(list);
+                            break;
                     }
-                } while(choice_2!=0);
+                } while(choice_sort!=0);
                 break;
             }
             case 5: 
@@ -95,11 +98,34 @@ int main() {
                 print_list(list);
                 break;
             }
-            case 6: print_list(list); break;
+            case 6: 
+            {
+                do
+                {
+                    printf("1. In danh sách xuôi\n");
+                    printf("2. In danh sách ngược\n");
+                    printf("0. Quay lại\n");
+                    printf("Chọn: ");
+                    scanf("%d",&choice_print);
+
+                    switch (choice_print)
+                    {
+                    case 1:
+                        print_list(list);     
+                        break;
+                    case 2:
+                        print_List_Rev(list);
+                        break;
+                    }
+                }  while (choice_print != 0);
+                break;
+            }
             case 7: display_fibonacci(list); break;
         }
-    } while (choice != 0);
+    }   while(choice!=0);
+    
 
     free_list(list);
     return 0; 
+
 }

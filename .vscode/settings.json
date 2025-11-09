@@ -61,5 +61,6 @@
     "funtion.h": "c",
     "stdlib.h": "c"
   },
-  "C_Cpp.default.compilerPath": "C:/msys64/ucrt64/bin/gcc.exe"
+  "C_Cpp.default.compilerPath": "cl.exe",
+  "C_Cpp.errorSquiggles": "disabled"
 }

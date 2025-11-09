@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**"
             ],
-            "compilerPath": "C:/msys64/ucrt64/bin/gcc.exe",
+            "compilerPath": "cl.exe",
             "cStandard": "${default}",
             "cppStandard": "${default}",
             "intelliSenseMode": "gcc-arm",

@@ -17,4 +17,5 @@ void append(DLL* list, int data);
 void delete_node(DLL*list, Node* node);
 void free_List(DLL* list);
 void print_List(DLL* list);
+void print_List_Rev(DLL* list);
 #endif
