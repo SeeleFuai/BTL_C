@@ -1,13 +1,12 @@
 #include "DDL.h"
 
 void swap_nodes(DLL* list, Node* a, Node* b) {
-    if (a == b) return;
 
     Node* aPrev = a->prev;
     Node* aNext = a->next;
     Node* bPrev = b->prev;
     Node* bNext = b->next;
-
+    
     // Nếu a và b liền kề
     if (a->next == b) {
         a->next = bNext;
