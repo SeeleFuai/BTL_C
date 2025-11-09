@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include "DDL.h"
 
-int product_filtered(Node* head) {
+int product_filtered(DLL* list) {
     int product = 1;
     int found = 0;
-    while (head) {
-        if (head->data > 0 && head->data % 2 == 0 && head->data % 5 == 0) {
-            product *= head->data;
+    Node* current = list->head;
+    while (current) {
+        if (current->data > 0 && current->data % 2 == 0 && current->data % 5 == 0) {
+            product *= current->data;
             found = 1;
         }
-        head = head->next;
+        current = current->next;
     }
     return found ? product : 0;
 }

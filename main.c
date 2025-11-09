@@ -34,7 +34,14 @@ int main() {
         scanf("%d", &choice);
 
         switch (choice) {
-            case 1: init_list(&head); break;
+            case 1: 
+            {
+                free_list(head);
+                head = NULL;
+                init_list(&head); 
+                print_list(head);
+                break;
+            }
             case 2: 
             {
                 printf("Danh sách hiện tại:\n");
@@ -75,5 +82,5 @@ int main() {
     } while (choice != 0);
 
     free_list(head);
-    return 0;
+    return 0; 
 }

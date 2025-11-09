@@ -7,9 +7,14 @@ typedef struct Node {
     struct Node* next;
 } Node;
 
-Node* create_node(int data);
-void append(Node** head, int data);
-void delete_node(Node** head, Node* node);
-void free_list(Node* head);
+typedef struct DLL {
+    Node* head;
+    Node* tail;
+} DLL;
 
+DLL* create_List();
+void append(DLL* list, int data);
+void delete_node(DLL*list, int data);
+void free_List(DLL* list);
+void print_List(DLL* list);
 #endif

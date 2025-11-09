@@ -11,13 +11,14 @@ int is_fibonacci(int n) {
     return b == n || n == 0;
 }
 
-void display_fibonacci(Node* head) {
+void display_fibonacci(DLL* list) {
     printf("Các số Fibonacci trong danh sách:\n");
-    while (head) {
-        if (is_fibonacci(head->data)) {
-            printf("%d ", head->data);
+    Node* temp = list->head;
+    while (temp) {
+        if (is_fibonacci(temp->data)) {
+            printf("%d ", temp->data);
         }
-        head = head->next;
+        temp = temp->next;
     }
     printf("\n");
 }

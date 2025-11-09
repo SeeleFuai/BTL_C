@@ -2,37 +2,51 @@
 #include <stdlib.h>
 #include "DDL.h"
 
-Node* create_node(int data) {
-    Node* new_node = (Node*)malloc(sizeof(Node));
-    new_node->data = data;
-    new_node->prev = new_node->next = NULL;
-    return new_node;
+DLL* create_List() {
+    DLL* list = (DLL*)malloc(sizeof(DLL));
+    list->head = NULL;
+    list->tail = NULL;
+    return list;
 }
 
-void append(Node** head, int data) {
-    Node* new_node = create_node(data);
-    if (*head == NULL) {
-        *head = new_node;
-        return;
+void append(DLL* list, int data) {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = data;
+    newNode->prev = NULL;
+    newNode->next = NULL;
+
+    if (list->head == NULL) {
+        list->head = newNode;
+        list->tail = newNode;
+    } else {
+        newNode->prev = list->tail;
+        list->tail->next = newNode;
+        list->tail = newNode;
     }
-    Node* temp = *head;
-    while (temp->next) temp = temp->next;
-    temp->next = new_node;
-    new_node->prev = temp;
 }
 
-void delete_node(Node** head, Node* node) {
-    if (!node) return;
-    if (node->prev) node->prev->next = node->next;
-    else *head = node->next;
-    if (node->next) node->next->prev = node->prev;
+void delete_node(DLL* list,Node* node) {
+    if (!list || !node) return;
+
+    if (node->prev)// nếu như node này có phần tử đứng sau
+        node->prev->next = node->next;
+    else// node này là head
+        list->head = node->next;
+
+    if (node->next)// node này có ptu đứng trước
+        node->next->prev = node->prev;
+    else// node này là tail
+        list->tail = node->prev;
+
     free(node);
 }
 
-void free_list(Node* head) {
-    while (head) {
-        Node* temp = head;
-        head = head->next;
+void free_list(DLL* list) {
+    Node* current = list->head;
+    while (current != NULL) {
+        Node* temp = current;
+        current = current->next;
         free(temp);
     }
+    free(list);
 }

@@ -8,11 +8,11 @@ int is_prime(int n) {
     return 1;
 }
 
-void check_and_delete(Node** head) {
-    Node* temp = *head;
+void check_and_delete(DLL* list) {
+    Node* temp = list->head;
     for (int i = 1; i < 5 && temp; i++)
         temp = temp->next;
     if (temp && is_prime(temp->data)) {
-        delete_node(head, temp);
+        delete_node(list, temp);
     }
 }

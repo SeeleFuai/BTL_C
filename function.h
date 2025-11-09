@@ -3,12 +3,11 @@
 
 #include "DDL.h"
 
-void init_list(Node** head);
-void check_and_delete(Node** head);
-int product_filtered(Node* head);
-void sort_list(Node* head);
-void remove_duplicates(Node** head);
-void print_list(Node* head);
-void display_fibonacci(Node* head);
+void init_list(DLL* list); // xong
+void check_and_delete(DLL* list);//xong
+int product_filtered(DLL* list); // xong
+void sort_list(DLL* list); // xong, sort by value
+void remove_duplicates(DLL* list);//xong
+void display_fibonacci(DLL* list);// xong
 
 #endif
