@@ -62,9 +62,11 @@ int main() {
             {
                 do
                 {
-                    printf("1.Sắp xếp theo giá trị");
-                    printf("2.Sắp xếp theo Node");
-                    printf("0.Quay lại");
+                    printf("1.Sắp xếp theo giá trị\n");
+                    printf("2.Sắp xếp theo Node\n");
+                    printf("0.Quay lại\n");
+                    printf("Chọn: ");
+                    scanf("%d", &choice_2);
                     switch (choice_2)
                     {
                     case 1:
@@ -80,11 +82,8 @@ int main() {
                         sort_list_(list); 
                         printf("Danh sách sau khi sắp xếp:\n");
                         print_list(list);
-                    default:
-                        printf("Chọn lựa chọn có sẵn!");
-                        break;
                     }
-                } while(choice!=0);
+                } while(choice_2!=0);
                 break;
             }
             case 5: 
