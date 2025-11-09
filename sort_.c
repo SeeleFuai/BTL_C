@@ -3,13 +3,6 @@
 void swap_nodes(DLL* list, Node* a, Node* b) {
     if (a == b) return;
 
-    // Đảm bảo a đứng trước b
-    if (b->prev == a) {
-        Node* temp = a;
-        a = b;
-        b = temp;
-    }
-
     Node* aPrev = a->prev;
     Node* aNext = a->next;
     Node* bPrev = b->prev;
@@ -23,7 +16,9 @@ void swap_nodes(DLL* list, Node* a, Node* b) {
         b->prev = aPrev;
         if (aPrev) aPrev->next = b;
         if (bNext) bNext->prev = a;
-    } else {
+    } 
+    else 
+    {
         // Hoán đổi con trỏ
         a->next = bNext;
         a->prev = bPrev;
@@ -35,7 +30,7 @@ void swap_nodes(DLL* list, Node* a, Node* b) {
         if (bNext) bNext->prev = a;
     }
 
-    // Cập nhật head và tail nếu cần
+    // Cập nhật head và tail nếu có 
     if (list->head == a) list->head = b;
     else if (list->head == b) list->head = a;
     if (list->tail == a) list->tail = b;
