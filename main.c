@@ -9,17 +9,17 @@
 #include "check_prime.c"
 #include "filter.c"
 #include "sort.c"
+#include "sort_.c"
 #include "remove_dup.c"
 #include "print_list.c"
 #include "fib_display.c"
 
 
 
-
 int main() {
     Node* head = NULL;
     int choice;
-
+    int choice_2;
     do {
         printf("\nMenu:\n");
         printf("1. Khởi tạo danh sách\n");
@@ -60,11 +60,31 @@ int main() {
             }
             case 4: 
             {
-                printf("Danh sách hiện tại:\n");
-                print_list(head);
-                sort_list(head); 
-                printf("Danh sách sau khi sắp xếp:\n");
-                print_list(head);
+                do
+                {
+                    printf("1.Sắp xếp theo giá trị");
+                    printf("2.Sắp xếp theo Node");
+                    printf("0.Quay lại");
+                    switch (choice_2)
+                    {
+                    case 1:
+                        printf("Danh sách hiện tại:\n");
+                        print_list(head);
+                        sort_list(head); 
+                        printf("Danh sách sau khi sắp xếp:\n");
+                        print_list(head);
+                        break;
+                    case 2:
+                        printf("Danh sách hiện tại:\n");
+                        print_list(head);
+                        sort_list_(head); 
+                        printf("Danh sách sau khi sắp xếp:\n");
+                        print_list(head);
+                    default:
+                        printf("Chọn lựa chọn có sẵn!");
+                        break;
+                    }
+                } while(choice!=0);
                 break;
             }
             case 5: 
