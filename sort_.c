@@ -31,9 +31,7 @@ void swap_nodes(DLL* list, Node* a, Node* b) {
 
     // Cập nhật head và tail nếu có 
     if (list->head == a) list->head = b;
-    else if (list->head == b) list->head = a;
-    if (list->tail == a) list->tail = b;
-    else if (list->tail == b) list->tail = a;
+    if (list->tail == b) list->tail = a;
 }
 
 
