@@ -18,6 +18,7 @@
 
 int main() {
     DLL* list  = create_List();
+    
     int choice;
     int choice_sort;
     int choice_print;
