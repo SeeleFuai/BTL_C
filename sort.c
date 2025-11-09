@@ -11,3 +11,4 @@ void sort_list(DLL* list) {
         }
     }
 }
+//d n a m j k b u i o

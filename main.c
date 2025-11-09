@@ -17,7 +17,7 @@
 
 
 int main() {
-    Node* head = NULL;
+    DLL* list  = create_List();
     int choice;
     int choice_2;
     do {
@@ -36,26 +36,26 @@ int main() {
         switch (choice) {
             case 1: 
             {
-                free_list(head);
-                head = NULL;
-                init_list(&head); 
-                print_list(head);
+                free_list(list);
+                list = create_List();
+                init_list(list); 
+                print_list(list);
                 break;
             }
             case 2: 
             {
                 printf("Danh sách hiện tại:\n");
-                print_list(head);
-                check_and_delete(&head);
+                print_list(list);
+                check_and_delete(list);
                 printf("Danh sách sau khi kiểm tra và xóa:\n");
-                print_list(head); 
+                print_list(list); 
                 break;
             }
             case 3: 
             {
                 printf("Danh sách hiện tại:\n");
-                print_list(head);
-                printf("Tích = %d\n", product_filtered(head)); 
+                print_list(list);
+                printf("Tích = %d\n", product_filtered(list)); 
                 break;
             }
             case 4: 
@@ -69,17 +69,17 @@ int main() {
                     {
                     case 1:
                         printf("Danh sách hiện tại:\n");
-                        print_list(head);
-                        sort_list(head); 
+                        print_list(list);
+                        sort_list(list); 
                         printf("Danh sách sau khi sắp xếp:\n");
-                        print_list(head);
+                        print_list(list);
                         break;
                     case 2:
                         printf("Danh sách hiện tại:\n");
-                        print_list(head);
-                        sort_list_(head); 
+                        print_list(list);
+                        sort_list_(list); 
                         printf("Danh sách sau khi sắp xếp:\n");
-                        print_list(head);
+                        print_list(list);
                     default:
                         printf("Chọn lựa chọn có sẵn!");
                         break;
@@ -90,17 +90,17 @@ int main() {
             case 5: 
             {
                 printf("Danh sách hiện tại:\n");
-                print_list(head);
-                remove_duplicates(&head); 
+                print_list(list);
+                remove_duplicates(list); 
                 printf("Danh sách sau khi xóa phần tử trùng nhau:\n");
-                print_list(head);
+                print_list(list);
                 break;
             }
-            case 6: print_list(head); break;
-            case 7: display_fibonacci(head); break;
+            case 6: print_list(list); break;
+            case 7: display_fibonacci(list); break;
         }
     } while (choice != 0);
 
-    free_list(head);
+    free_list(list);
     return 0; 
 }

@@ -38,7 +38,7 @@ void swap_nodes(DLL* list, Node* a, Node* b) {
 }
 
 
-void sort_list(DLL* list) {
+void sort_list_(DLL* list) {
     if (!list || !list->head) return;
 
     for (Node* i = list->head; i && i->next; i = i->next) {
