@@ -43,9 +43,9 @@ void sort_list_(DLL* list) {
             if (i->data > j->data) {
                 swap_nodes(list, i, j);
                 // Sau khi hoán đổi, i trỏ tới nút nhỏ hơn, cần quay lại để tiếp tục
-                // Node* temp = i;
-                // i = j;
-                // j = temp;
+                Node* temp = i;
+                i = j;
+                j = temp;
             }
         }
     }
