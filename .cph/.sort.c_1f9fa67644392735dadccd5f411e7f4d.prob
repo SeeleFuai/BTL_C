@@ -1,0 +1,1 @@
+{"name":"Local: sort","url":"d:\\BTL\\BTL_C\\sort.c","tests":[{"id":1763386259887,"input":"2 3 5 1 9","output":"1 2 3 5 9"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\BTL\\BTL_C\\sort.c","group":"local","local":true}

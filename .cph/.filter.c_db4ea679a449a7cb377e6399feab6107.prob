@@ -1,0 +1,1 @@
+{"name":"Local: filter","url":"d:\\BTL\\BTL_C\\filter.c","tests":[{"id":1763386897237,"input":"10 15 2 -5 -10 4 #","output":"Nhập các số nguyên (dừng với #):\nTích = 10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\BTL\\BTL_C\\filter.c","group":"local","local":true}
